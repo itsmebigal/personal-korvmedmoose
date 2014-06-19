@@ -1,0 +1,122 @@
+@import "compass/css3";
+@import "compass/css3/transform";
+@import "compass/css3/transition";
+@import "compass/css3/box-shadow";
+@import "compass/css3/images";
+@import "compass/css3/inline-block";
+@import "compass/css3/border-radius";
+@import "compass/css3/box-sizing";
+@import "compass/css3/background-size";
+@import "compass/css3/text-shadow";
+@import "normalize";
+@import "config";
+
+
+/*** Alignment ***/
+
+.alignright { text-align: right; }
+.alignleft { text-align: left; }
+.aligncenter { text-align: center; }
+.left { float: left; }
+.right { float: right; }
+.center { margin-left: auto; margin-right: auto; }
+
+.clearfix:after, .ngg-clear:after, .clear:after, .row:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; overflow: hidden; } /* Clearfix for floating elements, an old CSS weakness */
+
+/*** Code ***/
+
+pre { margin: 15px 0px; padding: 10px; color: #222; line-height: 16px; margin-bottom: 18px; padding: 1.5em; font-size: 0.9em; word-wrap: break-word; }
+code {	display:block; direction:ltr; text-align:left; font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace; word-wrap: break-word; }
+
+
+/*** Fluid grid ***/
+
+.row { width: 100%; max-width: 960px; position: relative; margin: 0 auto; }
+.column { margin-left: 2.564102564%; margin-right:0px; float: left; }
+.column:first-child { margin-left: 0; }
+.column.grid-1{width: 5.982905983%;}
+.column.grid-2{width: 14.529914530000001%;}
+.column.grid-3{width: 23.076923077%;}
+.column.grid-4{width: 31.623931624%;}
+.column.grid-5{width: 40.170940171000005%;}
+.column.grid-6{width: 48.717948718%;}
+.column.grid-7{width: 57.264957265%;}
+.column.grid-8{width: 65.81196581200001%;}
+.column.grid-9{width: 74.358974359%;}
+.column.grid-10{width: 82.905982906%;}
+.column.grid-11{width: 91.45299145300001%;}
+.column.grid-12 {width: 100%;}
+
+.nomargin .column { margin: 0; }
+.nomargin .column.grid-1 { width: 8.33333%; }
+.nomargin .column.grid-2 { width: 16.66666%; }
+.nomargin .column.grid-3 { width: 25%; }
+.nomargin .column.grid-4 { width: 33.33333%; }
+.nomargin .column.grid-5 { width: 41.66666%; }
+.nomargin .column.grid-6 { width: 50%; }
+.nomargin .column.grid-7 { width: 58.33333%; }
+.nomargin .column.grid-8 { width: 66.66666%; }
+.nomargin .column.grid-9 { width: 75%; }
+.nomargin .column.grid-10 { width: 83.33333%; }
+.nomargin .column.grid-11 { width: 91.66666%; }
+.nomargin .column.grid-12 { width: 100%; }
+
+
+/*** Typography ***/
+
+html { font-size: 100%; -webkit-text-size-adjust: none; }
+
+body { font-family: Helvetica, Arial, sans-serif; color: #1F1F21; }
+
+h1 { font-size: 44px; font-size: 4.4rem; }
+h2 { font-size: 24px; font-size: 2.4rem; line-height: 24px; line-height: 2.4rem; font-family: 'din_boldbold', sans-serif; }
+h3 { font-size: 22px; font-size: 2.2rem; line-height: 28px; line-height: 2.8rem; font-family: 'din_lightlight', sans-serif; padding-bottom: 15px;}
+h4 { font-size: 18px; font-size: 1.8rem; line-height: 21px; line-height: 2.1rem; }
+h5 { font-size: 16px; font-size: 1.6rem; line-height: 18px; line-height: 1.8rem; color: #b2b2b2; }
+
+.strong { font-weight: bold; }
+
+.small { font-size: 12px; font-size: 1.2rem; line-height: 18px; line-height: 1.8rem; }
+.large { font-size: 16px; font-size: 1.6rem; line-height: 24px; line-height: 2.4rem; }
+
+.red { color: #e30126; }
+.blue { color: #004b8d; }
+.green { color: #78be37; }
+.light { color: #808080; }
+
+a { font-weight: 100; color: #007aff; text-decoration: none; }
+a:active { opacity: 0.6; }
+
+
+/*** Globals ***/
+
+html, body { height: 100%; width: 100%; }
+
+body { width: 100%; height: 100%; }
+
+h1, h2, h3, h4, h5 { margin: 0; }
+
+p { margin: 0; font-size: 12px; line-height: 18px; }
+
+a, a:focus, a:active, a:hover { outline: none; }
+
+img { display: block; max-width: 100%; height: auto; margin: 0; }
+
+.content img, .sidebar img { @include border-radius(5px); }
+
+input:focus { outline: none; }
+
+iframe { border: 0; }
+
+
+/*** Touch specific ***/
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+    -webkit-tap-highlight-color: transparent;	/* For some Androids */
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: text;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+}

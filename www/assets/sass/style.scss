@@ -1,0 +1,139 @@
+@import "imports/base";
+
+header{
+	text-align: center;
+	height: 200px;
+	overflow: hidden;
+	width: 100%;
+	position: fixed;
+	text-align: center;
+	line-height: 200px;
+	vertical-align: middle;
+
+	img{
+		width: 100%;
+		height: auto;
+		position: absolute;
+		margin-top: -25%;
+	}
+
+	.logo{
+		width: 100px;
+		height: 100px;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin: -50px 0 0 -50px;
+		background-color: rgba(0, 0, 0, 1);
+		@include border-radius(50px);
+		line-height: 100px;
+		vertical-align: middle;
+
+		img{
+			width: 50%;
+			position: relative;
+			left: 50%;
+			top: 50%;
+			margin: -32px 0 0 -25px;
+		}
+	}
+
+	p{
+		color: #fff;
+	}
+
+	h1{
+		color: #fff;
+		position: relative;
+
+	}
+}
+
+.hide{
+	opacity: 0;
+}
+
+#main{
+	position: relative;
+	$experimental-support-for-svg: true; -moz-animation: bodyBg 25s linear infinite; -webkit-animation: bodyBg 25s linear infinite; animation-iteration-count: infinite; 
+	top: 200px;
+	// background-image: url('/assets/images/loader.gif');
+	// background-repeat: no-repeat;
+	// background-position: 50% 20%;
+
+	&:after{
+		content: '';
+		display: block;
+		clear: both;
+	}
+
+	.videoPadding{
+		width: 33.33333%; 
+		float: left;
+		height: auto;
+		padding: 1%;
+		position: relative;
+		// overflow: hidden;
+		@include box-sizing(border-box);
+		@include transition(all 0.3s ease-in-out);
+		@include translate3d(0px, 0px, 0px);
+
+		.videoWrapper{
+			position: relative;
+			padding-bottom: 56.25%; /* 16:9 */
+			width: 100%;
+			height: auto;
+			@include transition(all 1s ease-in-out);
+
+			iframe{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+}
+
+@media all and (max-width:768px) {
+
+	#main {
+		top: 101px;
+
+		.videoPadding{ 
+			width: 33.33333%; 
+		}
+	}
+}
+
+@media all and (max-width:640px) {
+
+	#main .videoPadding{ 
+		width: 50%; 
+	}
+}
+
+@media all and (max-width:500px) {
+
+	#main .videoPadding{ 
+		width: 100%; 
+		padding: 3%;
+	}
+}
+
+/*** Keyframes ***/
+
+@-moz-keyframes bodyBg{
+	0%   { background-color: #ff9933; }
+	33%  { background-color: #c9ff23; }
+	66%  { background-color: #ff0179; }
+	100% { background-color: #ff9933; }
+}
+
+@-webkit-keyframes bodyBg{
+	0%   { background-color: #ff9933; }
+	33%  { background-color: #c9ff23; }
+	66%  { background-color: #ff0179; }
+	100% { background-color: #ff9933; }
+}
